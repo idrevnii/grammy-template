@@ -1,0 +1,1 @@
+export { textRouter } from './textRouter'
