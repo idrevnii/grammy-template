@@ -9,7 +9,8 @@ import {
     getHelpers,
     getRatelimiter,
     getThrottler,
-    getI18n
+    getI18n,
+    attachUser
 } from './middlewares'
 import type { IContext } from './models'
 import { logger } from '../logger'
@@ -23,6 +24,7 @@ export async function startBot() {
         .use(getRatelimiter())
         .use(hydrateReply)
         .use(getHelpers())
+        .use(attachUser)
 
     bot.api.config.use(getThrottler())
     bot.api.config.use(parseMode('HTML'))
