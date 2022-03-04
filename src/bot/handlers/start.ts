@@ -1,7 +1,7 @@
 import { IContext } from '../models'
 
-export async function startHandler({ from, reply, i18n }: IContext) {
-    if (from?.id) {
-        reply(i18n.t('hello'))
+export async function startHandler(ctx: IContext) {
+    if (ctx.from?.id) {
+        ctx.reply(ctx.i18n.t('hello'))
     }
 }

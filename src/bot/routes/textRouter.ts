@@ -3,7 +3,6 @@ import { startHandler } from '../handlers'
 import { IContext } from '../models'
 
 export const textRouter = new Router<IContext>(({ msg }) => {
-    console.log(msg)
     if (msg?.text === '/start') {
         return 'start'
     }
