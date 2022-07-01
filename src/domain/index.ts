@@ -1,7 +1,2 @@
-export {
-    insertUser,
-    findUser,
-    updateUser,
-    deleteUser,
-    findOrCreateUser
-} from './db'
+export { insertUser, findUser, updateUser, deleteUser } from './db'
+export { findOrCreateUser } from './user'

@@ -14,7 +14,6 @@ async function main() {
     process
         .on('unhandledRejection', (reason) => {
             logger.error(`Rejection: ${reason}`)
-            console.log(reason)
         })
         .on('uncaughtException', (err) => {
             logger.error(`Exception: ${err}`)
@@ -25,5 +24,5 @@ async function main() {
 }
 
 main()
-    .catch((e) => console.error(e))
+    .catch((e) => logger.error(e))
     .finally(() => gracefulStop())

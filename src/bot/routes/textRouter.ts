@@ -1,9 +1,9 @@
 import { Router } from '@grammyjs/router'
 import { startHandler } from '../handlers'
-import { IContext } from '../models'
+import { TextContext } from '../models'
 
-export const textRouter = new Router<IContext>((ctx) => {
-    if (ctx.msg?.text === '/start') {
+export const textRouter = new Router<TextContext>((ctx) => {
+    if (ctx.msg.text === '/start') {
         return 'start'
     }
 })

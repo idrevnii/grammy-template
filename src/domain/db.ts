@@ -17,10 +17,10 @@ export async function deleteUser(userId: number) {
     return users.delete({ where: { userId } })
 }
 
-export async function findOrCreateUser(userId: number) {
+export async function upsertUser(user: Omit<User, 'createdAt'>) {
     return users.upsert({
-        where: { userId },
+        where: { userId: user.userId },
         update: {},
-        create: { userId, language: 'en' }
+        create: { userId: user.userId, language: user.language }
     })
 }
