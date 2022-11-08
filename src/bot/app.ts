@@ -12,7 +12,9 @@ import { logger } from '../logger'
 const bot = new Bot<IContext>(process.env.TOKEN || '')
 
 export async function startBot() {
+    // @ts-ignore
     bot.use(sequentialize())
+    // @ts-ignore
         .use(ignoreOld())
         .use(getI18n())
         .use(hydrateReply)
